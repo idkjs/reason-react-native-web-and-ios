@@ -3,15 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bs-react-native": "0.10.0",
     "react": "^16.8.4",
+    "react-art": "16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts-for-react-native-web": "2.1.1"
+    "react-native-web": "0.11.0",
+    "react-scripts-for-react-native-web": "2.1.1",
+    "reason-react": "0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-reason": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "postinstall": "node -e \"var s='../lib/js/./re',d='./node_modules/re',fs=require('fs');if(fs.existsSync(d)===false){fs.symlinkSync(s,d,'dir')};\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +29,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "bs-platform": "4.0.18",
+    "resize-observer-polyfill": "1.5.1"
+  }
 }
