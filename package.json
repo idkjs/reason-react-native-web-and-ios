@@ -2,7 +2,7 @@
   "name": "rnweb-cx-test",
   "version": "0.1.0",
   "private": true,
-  "keywords":["ReasonML","bs-react-native", "react-native", "cross-platform","bucklescripts","create-react-app","react-native-cli","ios"],
+  "keywords":["ReasonML","react-native-web","bs-react-native", "react-native", "cross-platform","bucklescripts","create-react-app","react-native-cli","ios"],
   "dependencies": {
     "bs-react-native": "0.10.0",
     "react": "^16.8.4",
