@@ -2,13 +2,14 @@
 'use strict';
 
 var Caml_option = require("bs-platform/lib/js/caml_option.js");
-var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
+var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Link$RnwebCxTest = require("./Link.bs.js");
 var Utils$RnwebCxTest = require("./Utils.bs.js");
 var Styles$RnwebCxTest = require("./styles/Styles.bs.js");
-var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
-var View$BsReactNative = require("bs-react-native/lib/js/src/components/view.js");
-var Button$BsReactNative = require("bs-react-native/lib/js/src/components/button.js");
+var Text$BsReactNative = require("bs-react-native/src/components/text.js");
+var View$BsReactNative = require("bs-react-native/src/components/view.js");
+var Image$BsReactNative = require("bs-react-native/src/components/image.js");
+var Button$BsReactNative = require("bs-react-native/src/components/button.js");
 
 var component = ReasonReact.statelessComponent("App");
 
@@ -25,7 +26,13 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
               return ReasonReact.element(undefined, undefined, View$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.app), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* array */[
-                              ReasonReact.element(undefined, undefined, View$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.header), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* array */[ReasonReact.element(undefined, undefined, Text$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.title), undefined, undefined, undefined, undefined, undefined, undefined, undefined, /* array */[Utils$RnwebCxTest.s("React Native for Web")]))])),
+                              ReasonReact.element(undefined, undefined, View$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.header), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* array */[
+                                        ReasonReact.element(undefined, undefined, Image$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, /* contain */427065300, /* `Required */[
+                                                    202657151,
+                                                    require("./assets/logoUri.svg")
+                                                  ], Caml_option.some(Styles$RnwebCxTest.styles.logo), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* array */[])),
+                                        ReasonReact.element(undefined, undefined, Text$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.title), undefined, undefined, undefined, undefined, undefined, undefined, undefined, /* array */[Utils$RnwebCxTest.s("React Native for Web")]))
+                                      ])),
                               ReasonReact.element(undefined, undefined, Text$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Caml_option.some(Styles$RnwebCxTest.styles.text), undefined, undefined, undefined, undefined, undefined, undefined, undefined, /* array */[
                                         Utils$RnwebCxTest.s("This is an example of an app built with "),
                                         ReasonReact.element(undefined, undefined, Link$RnwebCxTest.make("https://github.com/facebook/create-react-app", undefined, "Create React App", /* array */[])),

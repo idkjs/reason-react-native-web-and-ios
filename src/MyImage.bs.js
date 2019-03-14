@@ -2,9 +2,9 @@
 'use strict';
 
 var Caml_option = require("bs-platform/lib/js/caml_option.js");
-var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
+var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Styles$RnwebCxTest = require("./styles/Styles.bs.js");
-var Image$BsReactNative = require("bs-react-native/lib/js/src/components/image.js");
+var Image$BsReactNative = require("bs-react-native/src/components/image.js");
 
 var component = ReasonReact.statelessComponent("MyImage");
 
@@ -22,7 +22,7 @@ function make(_children) {
           /* render */(function (_self) {
               return ReasonReact.element(undefined, undefined, Image$BsReactNative.make(undefined, undefined, undefined, undefined, undefined, /* contain */427065300, /* `Required */[
                                 202657151,
-                                require("./assets/logoRN.png")
+                                require("./assets/muffin.png")
                               ], Caml_option.some(Styles$RnwebCxTest.styles.logo), undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined)(/* array */[]));
             }),
           /* initialState */component[/* initialState */10],

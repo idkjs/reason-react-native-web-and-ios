@@ -7,19 +7,21 @@
     "react": "^16.8.4",
     "react-art": "16.8.4",
     "react-dom": "^16.8.4",
+    "react-native": "0.59.1",
     "react-native-web": "0.11.0",
     "react-scripts-for-react-native-web": "2.1.1",
     "reason-react": "0.6.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "react-native run-ios",
+    "start:web": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-reason": "bsb -make-world",
     "watch": "bsb -make-world -w",
-    "clean": "bsb -clean-world",
-    "postinstall": "node -e \"var s='../lib/js/./re',d='./node_modules/re',fs=require('fs');if(fs.existsSync(d)===false){fs.symlinkSync(s,d,'dir')};\""
+    "clean": "bsb -clean-world"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,7 +33,19 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/runtime": "7.3.4",
+    "@svgr/cli": "4.1.0",
+    "babel-jest": "24.5.0",
     "bs-platform": "4.0.18",
-    "resize-observer-polyfill": "1.5.1"
+    "jest": "24.5.0",
+    "metro-react-native-babel-preset": "0.53.1",
+    "react-native-svg": "9.3.3",
+    "react-test-renderer": "16.8.3",
+    "resize-observer-polyfill": "1.5.1",
+    "trash-cli": "1.4.0"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

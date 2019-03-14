@@ -2,11 +2,11 @@
 'use strict';
 
 var Caml_option = require("bs-platform/lib/js/caml_option.js");
-var ReasonReact = require("reason-react/lib/js/src/ReasonReact.js");
+var ReasonReact = require("reason-react/src/ReasonReact.js");
 var ReactNative = require("react-native");
 var Styles$RnwebCxTest = require("./styles/Styles.bs.js");
-var Text$BsReactNative = require("bs-react-native/lib/js/src/components/text.js");
-var Style$BsReactNative = require("bs-react-native/lib/js/src/style.js");
+var Text$BsReactNative = require("bs-react-native/src/components/text.js");
+var Style$BsReactNative = require("bs-react-native/src/style.js");
 
 var component = ReasonReact.statelessComponent("Link");
 

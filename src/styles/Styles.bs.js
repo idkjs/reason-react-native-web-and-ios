@@ -2,8 +2,8 @@
 'use strict';
 
 var Block = require("bs-platform/lib/js/block.js");
-var Style$BsReactNative = require("bs-react-native/lib/js/src/style.js");
-var StyleSheet$BsReactNative = require("bs-react-native/lib/js/src/styleSheet.js");
+var Style$BsReactNative = require("bs-react-native/src/style.js");
+var StyleSheet$BsReactNative = require("bs-react-native/src/styleSheet.js");
 
 var styles = StyleSheet$BsReactNative.create({
       app: Style$BsReactNative.style(/* :: */[
