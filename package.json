@@ -2,6 +2,7 @@
   "name": "rnweb-cx-test",
   "version": "0.1.0",
   "private": true,
+  "keywords":["ReasonML","bs-react-native", "react-native", "cross-platform","bucklescripts","create-react-app","react-native-cli","ios"],
   "dependencies": {
     "bs-react-native": "0.10.0",
     "react": "^16.8.4",
@@ -35,15 +36,12 @@
   "devDependencies": {
     "@babel/core": "7.3.4",
     "@babel/runtime": "7.3.4",
-    "@svgr/cli": "4.1.0",
     "babel-jest": "24.5.0",
     "bs-platform": "4.0.18",
     "jest": "24.5.0",
     "metro-react-native-babel-preset": "0.53.1",
-    "react-native-svg": "9.3.3",
     "react-test-renderer": "16.8.3",
-    "resize-observer-polyfill": "1.5.1",
-    "trash-cli": "1.4.0"
+    "resize-observer-polyfill": "1.5.1"
   },
   "jest": {
     "preset": "react-native"
