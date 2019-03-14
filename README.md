@@ -1,44 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Setting up CrossPlatform React Native Web and ReasonML
 
-## Available Scripts
+## Uses Create-React-App and React-Native-cli
 
-In the project directory, you can run:
+1. `npx create-react-app --scripts-version=react-scripts-for-react-native-web my-app` using this [create-react-app fork](https://github.com/amsb/create-react-app-for-react-native-web)
+2. `touch bsconfig.json`
+3. `yarn add -D bs-platform`
+4. `yarn add reason-react bs-react-native react-native-web`
+5. `echo "SKIP_PREFLIGHT_CHECK=true" > .env`.
+6. Open `bsconfig.json`, add the following:
 
-### `npm start`
+```json
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "reason": {
+    "react-jsx": 2
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "bs-dependencies": ["reason-react", "bs-react-native"],
+  "refmt": 3,
+  "suffix": ".bs.js",
+  "namespace": true
+}
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ReactNative
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. In a seperate directory run `react-native init RnMyApp --template reason`
+2. Copy all of the root directory files/dir except `node_modules` and `App.js` into the web app you created before.
+3. Rename `index.js` in your root directory to `index.ios.js`. Then open it and change `import App from 'App';` to `import {default as App} from 'src/App.bs';`
+4. Change your first scripts to they look like:
 
-### `npm test`
+```json
+"start": "node node_modules/react-native/local-cli/cli.js start",
+"ios": "react-native run-ios",
+"start:web": "react-scripts start",
+"build-reason": "bsb -make-world",
+"watch": "bsb -make-world -w",
+"clean": "bsb -clean-world"
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running Each Project
 
-### `npm run build`
+1. Compile reason with `yarn watch`
+2. Run web version with `yarn start-web`
+3. Run `yarn start` to run start react-native.
+4. Run `yarn ios` to run the simulator. This takes a while.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![ios screenshot](images/rnweb-ios.png)
+![browser screenshot](images/rnweb-browser.png)
